@@ -6,19 +6,40 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <script src="script.js" async defer></script>
     </head>
-<body>
-<div id="text">hello</div>
+    <body>
+        <div id="text">
+            <!-- Drop down list of world countries -->
+            <select id="country" onchange="getCurrentTime()">
+                <option value="Australia">Australia</option>
+                <option value="France">France</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Russia">Russia</option>
+                <option value="Singapore">Singapore</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Spain">Spain</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Finland">Finland</option>
+                <option value="Hong Kong">Hong Kong</option>
+                <option value="Norway">Norway</option>
+                <option value="New York">New York</option>
+            </select>
+            
+        </div>
+
+        <div id="time">Please wait...</div>
+
+        <div id="logo-circle">
+            <div class="circle" data-splitting>fun, fearless, female </div>
+            <div id="logo">
+                COSMOPOLITAN
+            </div>
+        </div>
 
 
-<div id="logo">
-    COSMOPOLITAN
-</div>
 
-<div class="circle" data-splitting>fun, fearless, female </div>
-
-
-
-</body>
-    </html>
+    </body>
+</html>

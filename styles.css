@@ -11,6 +11,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
 @font-face {
@@ -33,7 +35,12 @@ body{
     /* border: 1px solid black; */
     font-family: Le-murmure;
     font-size: 10em;
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: perspective(1000px) translate(-50%, -50%);   
 }
 
 
@@ -42,13 +49,18 @@ body{
 
 .circle {
     transform-style: preserve-3d;
+    transform-origin: center;
     animation: animate 8s linear infinite;
     --deg: calc(360deg / var(--numchs));
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale3d(1.5, 1.5, 1.5);;
 }
 
 @keyframes animate {
     0% {
-        transform: perspective(1000px) rotateY(360deg) rotateX(15deg);
+        transform: perspective(1000px) rotateY(360deg) rotateX(-15deg);
     }
 
     100% {
@@ -63,11 +75,35 @@ body{
     background: transparent;
     color: #fd88bb;
     font-size: 4em;
-    /* font-family: Akzidenz-grotesk; */
-    /* padding: 5px 12px;
-    border: 4px solid black; */
     transform-style: preserve-3d;
     transform-origin: center;
-        transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(265px);
+    transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(265px);
+}
 
+/* Make text fixed at top left corner */
+#text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    border: none;
+}
+
+/* Make logo-circle perfectly centered in body */
+#logo-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    width: 50vw;
+    height: 30vh;
+}
+
+
+/* Make text fixed at top right corner */
+#time {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
