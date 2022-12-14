@@ -1,0 +1,73 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: Maginia;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: Le-murmure;
+    src: url(assets/le-murmure.otf);
+    font-weight: regular;
+  }
+  @font-face {
+    font-family: Maginia;
+    src: url(assets/Maginia.otf);
+    font-weight: regular;
+  }
+
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    font-family: Le-murmure;
+    font-size: 10em;
+    
+}
+
+
+/* circle */
+
+
+.circle {
+    transform-style: preserve-3d;
+    animation: animate 8s linear infinite;
+    --deg: calc(360deg / var(--numchs));
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(360deg) rotateX(15deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(0deg) rotateX(15deg);
+    }
+}
+
+.circle .char {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: transparent;
+    color: #fd88bb;
+    font-size: 4em;
+    /* font-family: Akzidenz-grotesk; */
+    /* padding: 5px 12px;
+    border: 4px solid black; */
+    transform-style: preserve-3d;
+    transform-origin: center;
+        transform: rotateY(calc(var(--char-index) * var(--deg))) translateZ(265px);
+
+}
